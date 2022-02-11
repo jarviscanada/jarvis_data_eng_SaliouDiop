@@ -18,7 +18,7 @@ hostname=$(hostname -f)
 # hardware specs
 cpu_number=$(grep -c ^processor /proc/cpuinfo)
 cpu_architecture=$(uname -m)
-cpu_model=$(lscpu | grep "Model name:" | awk '{print $3}')
+cpu_model=$(grep "model name" /proc/cpuinfo | head -1 | cut -d ":" -f2 | xargs)
 cpu_mhz=$(lscpu | grep "CPU MHz:" | awk '{print $3}')
 l2_cache=$(lscpu | grep "L2 cache:" | awk '{print $3}')
 total_mem=$(free -m | grep "Mem:" | awk '{print $2}')
