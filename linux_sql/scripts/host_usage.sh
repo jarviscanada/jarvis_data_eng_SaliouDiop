@@ -20,9 +20,8 @@ cpu_kernel=$(echo "$vmstat_mb" | awk '{print $14}'|tail -n1 | xargs)
 disk_io=$(echo "$vmstat_mb" | awk '{print $5}'|tail -n1 | xargs)
 disk_available=$(df -h | grep "/dev/sda1" | awk '{print $4}')
 timestamp=$(date +"%x %R %Z")
-# host_id=$(psql -h $psql_host -p $psql_port -U $psql_user -d $db_name -c "SELECT id FROM host_info WHERE hostname='$hostname';" | tail -n1)
 host_id=($(psql -h $psql_host -p $psql_port -U $psql_user -d $db_name -c "SELECT id FROM host_info WHERE hostname='$hostname';" | tail -n1))
-# host_id=$(psql -h $psql_host -p $psql_port -U $psql_user -d $db_name -c "SELECT id FROM host_info WHERE hostname='$hostname';" | tail -n1)
+
 
 insert_stmt="INSERT INTO host_usage (
     host_id, memory_free, cpu_idle,
