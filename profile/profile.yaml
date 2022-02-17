@@ -1,0 +1,119 @@
+# Preferred name (Characters only)
+name: "Saliou Diop"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_SaliouDiop
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - C++
+    - Javascript
+    - React
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+    - HTML/CSS
+  # At least 5 skills
+  competent:
+    - Java
+    - NodeJS
+    - Express
+    - Redux
+    - MongoDB
+    - Docker
+    - Sass
+    - Bootstrap
+    - Jest Testing Library
+  # At least 5 skills
+  familiar:
+    - TypeScript
+    - PHP
+    - Python
+    - Tailwind CSS
+    - Firebase
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: The purpose of this project is to design and implement a cluster that will help the Jarvis Linux Cluster Administration team to manage multiple Linux clusters running on CENTOS 7. This project is going to allow the LCA to keep track of each node hardware characteristics and monitor resource utilization in real time saved in a relational database management system. This project is built using Linux command lines, Bash scripts, PostgreSQL, Docker and Git.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+  #project name
+  - name: "Netflix REST API"
+    #URL is optional
+    git_url: "https://github.com/Saliou1920/netflix-api"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Build a Netflix clone REST API that allows you to add movies, series and authenticate a user using Express JS, MongoDB, Mongoose, Json Web Token, Helmet.
+  - name: "Jobs API"
+    git_url: "https://github.com/Saliou1920/jobs-api"
+    description: This API is built to manage careers. It helps people organize their job applications. Once you apply for a job, you can organize and track progress in a central portal. You need to register or log in to use this API.
+  - name: "Images Gallery"
+    git_url: "https://github.com/Saliou1920/Images-Gallery"
+    description: A web app that uses the Unsplash API to display beautiful images. The user can search for images by keyword, and can also save the images to their collection. The user can also view their saved images. This project is built using React, React-Router, Unplash API, Firebase authentification.
+    - name: "BLOG"
+    git_url: "https://github.com/Saliou1920/Blog"
+    description: A blog website that uses MYSQL to store and retrieve data. The admin can create a new post, edit an existing post, and delete a post. He can also create a new user, edit an existing user, and delete a user. This project is built using PHP, HTML, CSS, Javascript, MYSQL and CodeIgniter.
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2020-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
+  - title: "Tutor"
+    company: "XYZ Company"
+    duration: "2019"
+    description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
+
+#List of edcuation
+education:
+  - school_name: "Universite de Moncton"
+    duration: "2018-2022"
+    degree: "B.S. in Applied Computer Science Co-op."
+    department: "Computer Science"
+    # optional
+    awards_achievements:
+
+#Optional section
+others:
+  #category
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Soccer"
