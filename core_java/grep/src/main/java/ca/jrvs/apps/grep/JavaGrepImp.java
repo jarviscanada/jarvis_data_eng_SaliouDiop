@@ -1,20 +1,19 @@
 package ca.jrvs.apps.grep;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
-
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JavaGrepImp implements JavaGrep {
 
-    final Logger logger = LoggerFactory.getLogger(JavaGrep.class);
+    final Logger logger = Logger.getLogger(JavaGrepImp.class);
 
     private String regex;
     private String rootPath;
@@ -26,14 +25,13 @@ public class JavaGrepImp implements JavaGrep {
         this.outFile = outFile;
     }
 
-    // Main method to take 3 arguments: regex, rootPath, outFile
     public static void main(String[] args) {
+
         if (args.length != 3) {
             throw new IllegalArgumentException("Usage: JavaGrep <regex> <root-path> <out-file>");
         }
 
         BasicConfigurator.configure();
-
         JavaGrepImp javaGrepImp = new JavaGrepImp(args[0], args[1], args[2]);
 
         try {
@@ -64,7 +62,7 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     private List<String> findMatchedLines(List<String> lines) {
-        List<String> matchedLines = java.util.Collections.emptyList();
+        List<String> matchedLines = new ArrayList<>();
         for (String line : lines) {
             if (containsPattern(line)) {
                 matchedLines.add(line);
@@ -75,14 +73,26 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public List<File> listFiles(String rootDir) {
-        return null;
+        File root = new File(rootDir);
+        List<File> files = new ArrayList<>();
+        if (!root.isDirectory()) {
+            throw new IllegalArgumentException("Given root path is not a directory");
+        }
+        File[] listFiles = root.listFiles();
+        if (listFiles != null) {
+            for (File file : listFiles) {
+                if (file.isFile())
+                    files.add(file);
+            }
+        }
+        return files;
     }
 
     @Override
     public List<String> readLines(File inputFile) throws IllegalArgumentException {
         List<String> lines = new ArrayList<>();
         try {
-            lines = java.nio.file.Files.readAllLines(inputFile.toPath());
+            lines = Files.readAllLines(inputFile.toPath());
         } catch (IOException e) {
             logger.error("IOException: " + e.getMessage());
         }
@@ -91,7 +101,7 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public boolean containsPattern(String line) {
-        return false;
+        return line.matches(regex);
     }
 
     @Override
