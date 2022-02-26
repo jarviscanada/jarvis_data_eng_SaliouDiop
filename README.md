@@ -40,7 +40,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_SaliouDiop
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Developed an MVP for a Linux Cluster Monitoring agent using Agile techniques, a virtual machine provisioned using Google Cloud Platform, bash scripts, git, Docker, and PostgreSQL. Developed apps in Java to mimic Linux grep command and connect to PostgreSQL database. Performed unit testing using the JUnit library. Participated in daily scrum meetings and weekly code reviews
+**Software Developer, Jarvis (Jan 2022-present)**: Developed an MVP for a Linux Cluster Monitoring agent using Agile techniques, a virtual machine provisioned using Google Cloud Platform, bash scripts, git, Docker, and PostgreSQL. Developed apps in Java to mimic Linux grep command and connect to PostgreSQL database. Performed unit testing using the JUnit library. Participated in daily scrum meetings and weekly code reviews
 
 **Software Developer Intern, Greystone Energy Inc (May 2021-August 2021)**: Worked with the operation manager to create dashboards using Javascript, SQL, and Power Bi to evaluate employees' performance. Built reports for the operation manager to understand the data analysis steps, enabling him to take important decisions based on performance.
 
