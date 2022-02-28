@@ -8,7 +8,6 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
 public class JavaGrepLambdaImp extends JavaGrepImp {
 
     public JavaGrepLambdaImp(String regex, String rootPath, String outFile) {
@@ -39,12 +38,12 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
     @Override
     public List<String> readLines(File inputFile) throws IllegalArgumentException {
         List<String> lineStream = null;
-        try {
-            Stream<String> lines = Files.lines(inputFile.toPath());
-            lineStream = lines.collect(Collectors.toList());
+        try (Stream<String> stream = Files.lines(inputFile.toPath())) {
+            lineStream = stream.collect(Collectors.toList());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("IOException: " + e.getMessage());
         }
+
         return lineStream;
     }
 }
