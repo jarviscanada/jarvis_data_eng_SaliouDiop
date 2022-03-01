@@ -11,7 +11,7 @@ public class Customer implements DataTransferObject {
     private String address;
     private String city;
     private String state;
-    private String zipcode;
+    private String zipCode;
 
     public long getId() {
         return id;
@@ -19,47 +19,50 @@ public class Customer implements DataTransferObject {
     public String getFirstName() {
         return firstName;
     }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
     public String getLastName() {
         return lastName;
     }
-    public String setLastName(String lastName) {
-        return this.lastName = lastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
     public String getEmail() {
         return email;
     }
-    public String setEmail(String email) {
-        return this.email = email;
+    public void setEmail(String email) {
+        this.email = email;
     }
     public String getPhone() {
         return phone;
     }
-    public String setPhone(String phone) {
-        return this.phone = phone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
     public String getAddress() {
         return address;
     }
-    public String setAddress(String address) {
-        return this.address = address;
+    public void setAddress(String address) {
+        this.address = address;
     }
     public String getCity() {
         return city;
     }
-    public String setCity(String city) {
-        return this.city = city;
+    public void setCity(String city) {
+        this.city = city;
     }
     public String getState() {
         return state;
     }
-    public String setState(String state) {
-        return this.state = state;
+    public void setState(String state) {
+        this.state = state;
     }
-    public String getZipcode() {
-        return zipcode;
+    public String getZipCode() {
+        return zipCode;
     }
-    public String setZipcode(String zipcode) {
-        return this.zipcode = zipcode;
+    public String setZipCode(String zipcode) {
+        return this.zipCode = zipcode;
     }
 
     @Override
@@ -72,7 +75,7 @@ public class Customer implements DataTransferObject {
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
-                ", zipcode='" + zipcode + '\'' +
+                ", zipcode='" + zipCode + '\'' +
                 '}';
     }
 }
