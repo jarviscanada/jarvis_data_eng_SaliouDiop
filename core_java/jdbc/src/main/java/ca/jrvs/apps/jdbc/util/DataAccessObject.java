@@ -13,7 +13,6 @@ public abstract class DataAccessObject <T extends DataTransferObject> {
         super();
         this.connection = connection;
     }
-
     public abstract T findById(long id);
     public abstract List<T> findAll();
     public abstract T update(T dto);

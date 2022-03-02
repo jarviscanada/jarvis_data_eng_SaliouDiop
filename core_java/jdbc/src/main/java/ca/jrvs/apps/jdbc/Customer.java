@@ -16,6 +16,9 @@ public class Customer implements DataTransferObject {
     public long getId() {
         return id;
     }
+    public void setId(long id) {
+        this.id = id;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -61,13 +64,14 @@ public class Customer implements DataTransferObject {
     public String getZipCode() {
         return zipCode;
     }
-    public String setZipCode(String zipcode) {
-        return this.zipCode = zipcode;
+    public void setZipCode(String zipcode) {
+        this.zipCode = zipcode;
     }
 
     @Override
-    public String toString(){
-        return "Customer{" + "id=" + id +
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
@@ -75,7 +79,7 @@ public class Customer implements DataTransferObject {
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
-                ", zipcode='" + zipCode + '\'' +
+                ", zipCode='" + zipCode + '\'' +
                 '}';
     }
 }
