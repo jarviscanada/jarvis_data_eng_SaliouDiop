@@ -10,6 +10,23 @@
         <version>5.8.2</version>
           <scope>test</scope>
       </dependency>
+      <dependency>
+          <groupId>oauth.signpost</groupId>
+          <artifactId>oauth-signpost</artifactId>
+          <version>2.1.1</version>
+          <type>pom</type>
+      </dependency>
+      <dependency>
+          <groupId>oauth.signpost</groupId>
+          <artifactId>signpost-commonshttp4</artifactId>
+          <version>2.1.1</version>
+      </dependency>
+      <dependency>
+          <groupId>io.github.cdimascio</groupId>
+          <artifactId>java-dotenv</artifactId>
+          <version>5.2.2</version>
+          <scope>compile</scope>
+      </dependency>
   </dependencies>
     <properties>
         <maven.compiler.source>${java.version}</maven.compiler.source>
