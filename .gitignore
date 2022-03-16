@@ -3,3 +3,6 @@
 *.iml
 target/
 .env
+.env.local
+**/.env
+**/.env.local
