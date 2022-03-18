@@ -9,7 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class TwomapsTest {
 
     @Test
-    void test() throws Exception {
+    void testTrue() throws Exception {
+        Twomaps<String, Integer> tm = new Twomaps<>();
+        Map<String, Integer> map1 = Map.of("a", 1, "b", 2, "c", 3);
+        Map<String, Integer> map2 = Map.of("a", 1, "b", 2, "c", 3);
+        assertTrue(tm.compareMaps(map1, map2));
+    }
+    @Test
+    void testFalse() throws Exception {
         Twomaps<String, Integer> tm = new Twomaps<>();
         Map<String, Integer> map1 = Map.of("a", 1, "b", 2, "c", 3);
         Map<String, Integer> map2 = Map.of("a", 1, "b", 2, "c", 4);
