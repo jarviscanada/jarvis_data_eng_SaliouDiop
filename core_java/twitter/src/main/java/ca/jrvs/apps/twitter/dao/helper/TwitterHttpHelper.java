@@ -37,7 +37,8 @@ public class TwitterHttpHelper implements HttpHelper {
         try {
             consumer.sign(request);
             response = httpClient.send((HttpRequest) request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException | InterruptedException | OAuthMessageSignerException | OAuthExpectationFailedException | OAuthCommunicationException e) {
+        } catch (IOException | InterruptedException | OAuthMessageSignerException | OAuthExpectationFailedException |
+                OAuthCommunicationException e) {
             throw new RuntimeException(e);
         }
         return response;
