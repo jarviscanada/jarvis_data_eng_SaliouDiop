@@ -1,12 +1,14 @@
 package ca.jrvs.apps.twitter.dao;
 
+import java.io.IOException;
+
 public interface CrdDao <T, ID> {
     /**
      * Create a new entity
      * @param entity the entity to create
      * @return the created entity
      */
-    T create(T entity);
+    T create(T entity) throws IOException;
 
     /**
      * Find an entity by id
@@ -17,8 +19,8 @@ public interface CrdDao <T, ID> {
 
     /**
      * Delete an entity by id
-     * @param entity the entity to delete
+     * @param id the id of the entity to delete
      * @return the deleted entity
      */
-    T delete(T entity);
+    T delete(ID id);
 }
