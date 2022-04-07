@@ -13,7 +13,7 @@ public interface Service {
      * @param tweet the tweet to post
      * @return the posted tweet
      */
-    Tweet postTweet(Tweet tweet) throws IOException;
+    Tweet postTweet(Tweet tweet);
 
     /**
      * Show a tweet

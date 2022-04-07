@@ -11,7 +11,7 @@ public interface HttpHelper {
      * @param uri URI to call
      * @return response body
      */
-    HttpResponse httpPost(URI uri) throws IOException;
+    HttpResponse httpPost(URI uri);
 
     /**
      * Execute a HTTP Get call

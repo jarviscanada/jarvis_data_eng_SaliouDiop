@@ -16,7 +16,7 @@ public class TwitterService implements Service {
         this.dao = dao;
     }
     @Override
-    public Tweet postTweet(Tweet tweet) throws IOException {
+    public Tweet postTweet(Tweet tweet) {
         validatePostTweet(tweet);
         return dao.create(tweet);
     }

@@ -1,5 +1,6 @@
 package ca.jrvs.apps.twitter.dao.helper;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
 import org.apache.http.HttpResponse;
@@ -9,6 +10,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.client.methods.HttpUriRequest;
 
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import org.apache.http.util.EntityUtils;
@@ -31,17 +33,18 @@ public class TwitterHttpHelper implements HttpHelper {
     public TwitterHttpHelper(String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret) {
         this.consumer = new CommonsHttpOAuthConsumer(consumerKey, consumerSecret);
         this.consumer.setTokenWithSecret(accessToken, accessTokenSecret);
-        this.httpClient = HttpClientBuilder.create().build();
+        this.httpClient = new DefaultHttpClient();
     }
 
     public TwitterHttpHelper() {
-        String consumerKey = System.getenv("TWITTER_CONSUMER_KEY");
-        String consumerSecret = System.getenv("TWITTER_CONSUMER_SECRET");
-        String accessToken = System.getenv("TWITTER_ACCESS_TOKEN");
-        String accessTokenSecret = System.getenv("TWITTER_ACCESS_TOKEN_SECRET");
+        Dotenv dotenv = Dotenv.load();
+        String consumerKey = dotenv.get("TWITTER_API_KEY");
+        String consumerSecret = dotenv.get("TWITTER_API_KEY_SECRET");
+        String accessToken = dotenv.get("TWITTER_ACCESS_TOKEN");
+        String accessTokenSecret = dotenv.get("TWITTER_ACCESS_TOKEN_SECRET");
         this.consumer = new CommonsHttpOAuthConsumer(consumerKey, consumerSecret);
         this.consumer.setTokenWithSecret(accessToken, accessTokenSecret);
-        this.httpClient = HttpClientBuilder.create().build();
+        this.httpClient = new DefaultHttpClient();
     }
 
     @Override
@@ -51,12 +54,12 @@ public class TwitterHttpHelper implements HttpHelper {
     }
 
     @Override
-    public HttpResponse httpPost(URI uri) throws IOException {
+    public HttpResponse httpPost(URI uri) {
         HttpPost request = new HttpPost(uri);
         return executeHttpRequest(request);
     }
 
-    private HttpResponse executeHttpRequest(HttpUriRequest request) throws IOException {
+    private HttpResponse executeHttpRequest(HttpUriRequest request) {
         HttpResponse response = null;
         try {
             consumer.sign(request);
