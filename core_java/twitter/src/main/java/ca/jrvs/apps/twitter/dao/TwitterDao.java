@@ -4,6 +4,7 @@ import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
 import ca.jrvs.apps.twitter.model.Coordinates;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.util.JsonUtil;
+import com.google.gdata.util.common.base.PercentEscaper;
 import org.apache.http.HttpEntity;
 import org.apache.http.util.EntityUtils;
 import org.apache.http.HttpResponse;
@@ -29,7 +30,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
   }
 
   @Override
-  public Tweet create(Tweet entity) throws IOException {
+  public Tweet create(Tweet entity) {
     URI uri = getPostUri(entity);
     HttpResponse response = httpHelper.httpPost(uri);
     return parseResponse(response, HTTP_RESPONSE_OK);
@@ -50,12 +51,8 @@ public class TwitterDao implements CrdDao<Tweet, String> {
   public Tweet delete(String id) {
     String path = API_BASE_URI + DELETE_PATH + "?id=" + id;
     URI uri = getUri(path);
-    try {
-      HttpResponse response = httpHelper.httpPost(uri);
-      return parseResponse(response, HTTP_RESPONSE_OK);
-    } catch (IOException e) {
-      throw new RuntimeException("Failed to delete tweet", e);
-    }
+    HttpResponse response = httpHelper.httpPost(uri);
+    return parseResponse(response, HTTP_RESPONSE_OK);
   }
 
   public Tweet parseResponse(HttpResponse response, int expectedStatusCode) {
@@ -72,14 +69,17 @@ public class TwitterDao implements CrdDao<Tweet, String> {
     }
     return entity;
   }
+
   private URI getUri(String path) {
     return URI.create(API_BASE_URI + GET_PATH + "?id=" + path);
   }
+
   private URI getPostUri(Tweet tweet) {
+    PercentEscaper percentEscaper = new PercentEscaper("", false);
     double[] coordinates = tweet.getCoordinates().getCoordinates();
     String text = tweet.getText();
 
-    return URI.create(API_BASE_URI + POST_PATH + "?status=" + text + "&long=" + coordinates[1] + "&lat=" + coordinates[0]);
+    return URI.create(API_BASE_URI + POST_PATH + "?status=" + percentEscaper.escape(text) + "&lat=" + coordinates[0] + "&long=" + coordinates[1]);
   }
 
 }

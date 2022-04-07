@@ -8,7 +8,7 @@ public interface CrdDao <T, ID> {
      * @param entity the entity to create
      * @return the created entity
      */
-    T create(T entity) throws IOException;
+    T create(T entity);
 
     /**
      * Find an entity by id
