@@ -51,9 +51,6 @@ public class TwitterCLI {
             String command = args[0];
             Tweet tweet = null;
             switch (command) {
-                case "--help":
-                    printHelp();
-                    break;
                 case "post":
                     if (args.length != 3) {
                         throw new IllegalArgumentException(usage);
