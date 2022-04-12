@@ -15,7 +15,7 @@ public class StringtoInt {
             i++;
         }
         long result = 0;
-        while (i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+        while (i < str.length() && Character.isDigit(str.charAt(i))) {
             result = result * 10 + (str.charAt(i) - '0');
             if (result > Integer.MAX_VALUE) {
                 return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
