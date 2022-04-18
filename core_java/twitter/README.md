@@ -22,9 +22,9 @@ The following environment variables are required to run the application:
 - `TWITTER_ACCESS_TOKEN_SECRET` - Twitter API access token secret
 
 ## Usage
-If you want to use the application with Docker, you can use the [image](https://hub.docker.com/r/javatwitter/twitter-rest-api-app/) on Docker Hub.
+If you want to use the application with Docker, you can use the [image](https://hub.docker.com/r/salihou/twitter-app/) on Docker Hub.
 ```
-docker pull javatwitter/twitter-rest-api-app
+docker pull salihou/twitter-app
 ```
 1. Run the application:
 ```
@@ -69,4 +69,4 @@ The model use a simplified version of the Twitter JSON object.
 Several unit and integration tests are provided to verify the correctness of the application. The tests are based on the [JUnit 5](https://junit.org/) and [Mockito](https://site.mockito.org/) libraries.
 
 # Deployment
-The application is deployed on Docker Hub by creating a Docker image. The image is available [here](https://hub.docker.com/r/javatwitter/twitter-rest-api-app/).
+The application is deployed on Docker Hub by creating a Docker image. The image is available [here](https://hub.docker.com/r/salihou/twitter-app/).
