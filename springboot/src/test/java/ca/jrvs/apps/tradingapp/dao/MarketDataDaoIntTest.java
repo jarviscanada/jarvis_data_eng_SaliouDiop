@@ -1,6 +1,6 @@
 package ca.jrvs.apps.tradingapp.dao;
 
-import ca.jrvs.apps.tradingapp.model.IexQuote;
+import ca.jrvs.apps.tradingapp.model.domain.IexQuote;
 import ca.jrvs.apps.tradingapp.model.config.MarketDataConfig;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -35,7 +35,7 @@ class MarketDataDaoIntTest {
     }
 
     @Test
-    void findAllById() {
+    void findAllTicker() {
         List<IexQuote> quotes = dao.findAllById(List.of("AAPL", "MSFT"));
         assertEquals(2, quotes.size());
         assertEquals("AAPL", quotes.get(0).getSymbol());
