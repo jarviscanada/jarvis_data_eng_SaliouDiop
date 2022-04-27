@@ -19,10 +19,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Repository
 public class MarketDataDao implements CrudRepository<IexQuote, String> {
@@ -90,14 +87,10 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
                             () -> new DataRetrievalFailureException("HTTP request failed")
                     ))
             );
-            JSONObject IexQuotesJson = new JSONObject(response);
-            if(IexQuotesJson.isEmpty()) {
-                throw new DataRetrievalFailureException("invalid ticker");
-            }
+
             ObjectMapper mapper = new ObjectMapper();
-            JSONObject quoteJson = IexQuotesJson.getJSONObject(ticker);
             try {
-                IexQuote quote = mapper.readValue(quoteJson.get("quote").toString(), IexQuote.class);
+                IexQuote quote = mapper.readValue(response.get(), IexQuote.class);
                 quotes.add(quote);
             } catch (IOException e) {
                 logger.error("Error parsing IEX quote", e);

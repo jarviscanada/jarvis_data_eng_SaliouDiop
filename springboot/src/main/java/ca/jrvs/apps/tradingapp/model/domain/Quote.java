@@ -3,11 +3,11 @@ package ca.jrvs.apps.tradingapp.model.domain;
 public class Quote implements Entity<String>{
 
     private String ticker;
-    private String bidPrice;
-    private String askPrice;
-    private String lastPrice;
-    private String askSize;
-    private String bidSize;
+    private Double bidPrice;
+    private Double askPrice;
+    private Double lastPrice;
+    private Integer askSize;
+    private Integer bidSize;
 
     public String getTicker() {
         return ticker;
@@ -17,43 +17,43 @@ public class Quote implements Entity<String>{
         this.ticker = ticker;
     }
 
-    public String getBidPrice() {
+    public Double getBidPrice() {
         return bidPrice;
     }
 
-    public void setBidPrice(String bidPrice) {
+    public void setBidPrice(Double bidPrice) {
         this.bidPrice = bidPrice;
     }
 
-    public String getAskPrice() {
+    public Double getAskPrice() {
         return askPrice;
     }
 
-    public void setAskPrice(String askPrice) {
+    public void setAskPrice(Double askPrice) {
         this.askPrice = askPrice;
     }
 
-    public String getLastPrice() {
+    public Double getLastPrice() {
         return lastPrice;
     }
 
-    public void setLastPrice(String lastPrice) {
+    public void setLastPrice(Double lastPrice) {
         this.lastPrice = lastPrice;
     }
 
-    public String getAskSize() {
+    public Integer getAskSize() {
         return askSize;
     }
 
-    public void setAskSize(String askSize) {
+    public void setAskSize(Integer askSize) {
         this.askSize = askSize;
     }
 
-    public String getBidSize() {
+    public Integer getBidSize() {
         return bidSize;
     }
 
-    public void setBidSize(String bidSize) {
+    public void setBidSize(Integer bidSize) {
         this.bidSize = bidSize;
     }
 
@@ -63,7 +63,7 @@ public class Quote implements Entity<String>{
     }
 
     @Override
-    public void setId(String id) {
-        this.ticker = id;
+    public void setId(String s) {
+        this.ticker = s;
     }
 }
