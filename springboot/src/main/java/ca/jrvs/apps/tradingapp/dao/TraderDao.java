@@ -45,4 +45,9 @@ public class TraderDao extends JdbcCrudDao<Trader> {
         return Trader.class;
     }
 
+    @Override
+    public int updateOne(Trader entity) {
+        throw new UnsupportedOperationException("TraderDao does not support updateOne");
+    }
+
 }
