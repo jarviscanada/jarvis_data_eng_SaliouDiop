@@ -52,4 +52,25 @@ public class TraderAccountService {
         securityDao.deleteByAccountId(account.getId());
     }
 
+    public Account deposit(Integer accountId, Double amount) {
+        Account account = accountDao.findById(accountId).get();
+        account.setAmount(account.getAmount() + amount);
+        accountDao.updateOne(account);
+        return account;
+    }
+
+    public Account withdraw(Integer accountId, Double amount) {
+        Account account = accountDao.findById(accountId).get();
+        if (account.getAmount() < amount) {
+            throw new IllegalArgumentException("Insufficient funds");
+        }
+        account.setAmount(account.getAmount() - amount);
+        accountDao.updateOne(account);
+        return account;
+    }
+
+    public TraderAccountView getTraderAccountById(Integer id) {
+        return new TraderAccountView(traderDao.findById(id).get(), accountDao.findById(id).get());
+    }
+
 }
