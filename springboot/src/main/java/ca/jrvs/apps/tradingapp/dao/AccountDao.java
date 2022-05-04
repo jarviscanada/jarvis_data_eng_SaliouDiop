@@ -6,10 +6,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.Map;
 import java.util.Optional;
+
+@Repository
 
 public class AccountDao extends JdbcCrudDao<Account> {
 
@@ -55,7 +58,8 @@ public class AccountDao extends JdbcCrudDao<Account> {
 
     @Override
     public int updateOne(Account account) {
-        String sql = "UPDATE " + account + " SET " + "amount = ?, " + "WHERE" + ID_COLUMN_NAME + " = ?";
+        // update the amount
+        String sql = "UPDATE " + TABLE_NAME + " SET amount = ? WHERE " + ID_COLUMN_NAME + " = ?";
         return jdbcTemplate.update(sql, account.getAmount(), account.getId());
     }
 
