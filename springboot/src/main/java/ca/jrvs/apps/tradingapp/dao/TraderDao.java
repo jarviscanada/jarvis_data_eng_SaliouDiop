@@ -3,9 +3,12 @@ package ca.jrvs.apps.tradingapp.dao;
 import ca.jrvs.apps.tradingapp.model.domain.Trader;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 
+
+@Repository
 public class TraderDao extends JdbcCrudDao<Trader> {
     private final String TABLE_NAME = "trader";
     private final String COLUMN_ID = "id";
