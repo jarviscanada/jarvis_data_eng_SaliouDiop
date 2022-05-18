@@ -85,7 +85,7 @@ professional_experience:
   #Write your Jarvis role as a professional experience rather than training.
   - title: "Software Developer"
     company: "Jarvis"
-    duration: "2020-present"
+    duration: "Jan 2022-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Developed an MVP for a Linux Cluster Monitoring agent using Agile techniques, a virtual machine provisioned using Google Cloud Platform, bash scripts, git, Docker, and PostgreSQL. Developed apps in Java to mimic Linux grep command and connect to PostgreSQL database. Performed unit testing using the JUnit library. Participated in daily scrum meetings and weekly code reviews"
   - title: "Software Developer Intern"
