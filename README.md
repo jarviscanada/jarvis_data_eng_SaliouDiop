@@ -19,9 +19,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_SaliouDiop
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SaliouDiop/tree/master/core_java)]:
       
-  - Twitter App: Not Started
-  - JDBC App: Not Started
-  - Grep App: In Progress ...
+  - Twitter App: Developed a Java application (Command Line Interface) that can create, read and delete tweets from the CLI using Twitter REST API. The Java app builds the URI required and sends HTTP requests to the API using Apache HTTP components and Signpost 0auth library. The response is return in JSON format. This app is designed following the MVC design pattern consisting of a Model layer, Service layer and a DAO layer. The project is built using Java 11, Maven, JUnit 5 & Mockito, Docker, Twitter REST API
+  - JDBC App: Developed a JDBC apps to perform queries on a PostgresSQL database. The database stores information about customers, products, orders , and salesperson. The CRUD operations are implemented using the Data Access Objects (DAO) and Data Transfer Objects (DTO) pattern.The project is built using Java, Maven, PostgresSQL (running on a docker container), and the JDBC API.
+  - Grep App: Implemented a program to mimic Linux grep commands. The program will read all the files in the current directory and every directory below the current one looking in each file for a given regular expression. The output is written to an output file in the root directory.This project is written in Java (using Streams, Lambda, and RegEx pattern matching), Maven for packaging, and Docker for easy deployment.
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SaliouDiop/tree/master/springboot)]: Not Started
 
