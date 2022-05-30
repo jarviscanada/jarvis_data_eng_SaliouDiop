@@ -26,9 +26,9 @@ public class AppConfig {
     @Bean
     public DataSource dataSource() {
         System.out.println("Creating test datasource");
-        String url = "jdbc:postgresql://localhost:5432/tradingapp";
-        String user = "postgres";
-        String password = "postgres";
+        String url = Dotenv.load().get("DB_URL");
+        String user = Dotenv.load().get("DB_USERNAME");
+        String password = Dotenv.load().get("DB_PASSWORD");
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl(url);
         dataSource.setUsername(user);
